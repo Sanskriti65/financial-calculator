@@ -1,55 +1,78 @@
-document.getElementById('debtForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting and refreshing the page
+document.getElementById('debtForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    const principalAmount = parseFloat(document.getElementById('principalAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value);
     
-    // Get input values
-    var principalAmount = parseFloat(document.getElementById('principalAmount').value);
-    var interestRate = parseFloat(document.getElementById('interestRate').value);
-    var loanTerm = parseFloat(document.getElementById('loanTerm').value);
+    const monthlyInterestRate = interestRate / 12;
+    const totalPayments = loanTerm * 12;
     
-    // Calculate total debt
-    var totalDebt = principalAmount * Math.pow(1 + (interestRate / 100), loanTerm);
-    
-    // Display result
-    var debtResultElement = document.getElementById('debtResult');
-    debtResultElement.innerHTML = '<p>Total debt: RS. ' + totalDebt.toFixed(2) + '</p>';
-});
-
-document.getElementById('mortgageForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    // Get input values
-    var loanAmount = parseFloat(document.getElementById('loanAmount').value);
-    var interestRate = parseFloat(document.getElementById('interestRate').value);
-    var loanTerm = parseFloat(document.getElementById('loanTerm').value);
-    
-    // Calculate monthly payment
-    var monthlyInterestRate = interestRate / 100 / 12;
-    var totalPayments = loanTerm * 12;
-    var monthlyPayment = loanAmount * monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -totalPayments));
-    
-    // Display result
-    var mortgageResultElement = document.getElementById('mortgageResult');
-    mortgageResultElement.innerHTML = '<p>Monthly Payment: RS. ' + monthlyPayment.toFixed(2) + '</p>';
-});
+    const monthlyPayment = (principalAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -totalPayments));
+    const totalInterest = monthlyPayment * totalPayments - principalAmount;
+  
+    const resultElement = document.getElementById('debtResult');
+    resultElement.innerHTML = `
+      <p>Monthly Payment: RS. ${monthlyPayment.toFixed(2)}</p>
+      <p>Total Interest Paid: RS. ${totalInterest.toFixed(2)}</p>
+    `;
+  });
 
 
-document.getElementById('studentLoanForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    // Get input values
-    var loanAmount = parseFloat(document.getElementById('loanAmount').value);
-    var interestRate = parseFloat(document.getElementById('interestRate').value);
-    var loanTerm = parseFloat(document.getElementById('loanTerm').value);
-    
-    // Calculate monthly payment
-    var monthlyInterestRate = interestRate / 100 / 12;
-    var totalPayments = loanTerm * 12;
-    var monthlyPayment = loanAmount * monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -totalPayments));
-    
-    // Display result
-    var studentLoanResultElement = document.getElementById('studentLoanResult');
-    studentLoanResultElement.innerHTML = '<p>Monthly Payment: RS. ' + monthlyPayment.toFixed(2) + '</p>';
-});
+
+
+document.getElementById('mortgageForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+  
+    const monthlyInterestRate = interestRate / 12;
+    const totalPayments = loanTerm * 12;
+  
+    const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -totalPayments));
+    const totalPayment = monthlyPayment * totalPayments;
+    const totalInterest = totalPayment - loanAmount;
+  
+    const resultElement = document.getElementById('mortgageResult');
+    resultElement.innerHTML = `
+      <p>Monthly Payment: RS. ${monthlyPayment.toFixed(2)}</p>
+      <p>Total Payment: RS. ${totalPayment.toFixed(2)}</p>
+      <p>Total Interest Paid: RS. ${totalInterest.toFixed(2)}</p>
+    `;
+  });
+  document.getElementById('creditCardForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    const balance = parseFloat(document.getElementById('balance').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+    const monthlyPayment = parseFloat(document.getElementById('monthlyPayment').value);
+  
+    let months = 0;
+    let totalInterest = 0;
+    let currentBalance = balance;
+  
+    while (currentBalance > 0) {
+      months++;
+      const monthlyInterest = currentBalance * interestRate / 12;
+      totalInterest += monthlyInterest;
+      currentBalance = currentBalance + monthlyInterest - monthlyPayment;
+      
+      // Prevent infinite loop if the payment is too low
+      if (months > 500) {
+        alert('Payment too low to pay off the balance.');
+        break;
+      }    }
+  
+    const resultElement = document.getElementById('creditCardResult');
+    resultElement.innerHTML = `
+      <p>Months to Pay Off: ${months}</p>
+      <p>Total Interest Paid: RS. ${totalInterest.toFixed(2)}</p>
+    `;
+  });
+
+
 
 
 

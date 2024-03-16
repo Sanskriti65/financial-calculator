@@ -1,24 +1,27 @@
-document.getElementById('currencyForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    // Get input values
-    var amount = parseFloat(document.getElementById('amount').value);
-    var fromCurrency = document.getElementById('fromCurrency').value;
-    var toCurrency = document.getElementById('toCurrency').value;
-    
-    // Fixed conversion rates (for demonstration)
-    var conversionRates = {
-        USD: { EUR: 0.85, GBP: 0.72, INR: 73.97 },
-        EUR: { USD: 1.18, GBP: 0.85, INR: 88.19 },
-        GBP: { USD: 1.38, EUR: 1.18, INR: 102.72 },
-        INR: { USD: 0.014, EUR: 0.011, GBP: 0.0097 }
-        // Add more conversion rates as needed
+document.getElementById('currencyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    const amount = parseFloat(document.getElementById('amount').value);
+    const fromCurrency = document.getElementById('fromCurrency').value;
+    const toCurrency = document.getElementById('toCurrency').value;
+  
+    const exchangeRate = getExchangeRate(fromCurrency, toCurrency);
+    const convertedAmount = amount * exchangeRate;
+  
+    const resultElement = document.getElementById('conversionResult');
+    resultElement.innerHTML = `
+      <p>${amount.toFixed(2)} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}</p>
+    `;
+  });
+
+  function getExchangeRate(fromCurrency, toCurrency) {
+    // Mock exchange rates for demonstration (replace with actual rates or API call)
+    const exchangeRates = {
+      USD: { EUR: 0.85, GBP: 0.72, INR: 75.20 },
+      EUR: { USD: 1.18, GBP: 0.85, INR: 88.24 },
+      GBP: { USD: 1.39, EUR: 1.17, INR: 103.89 },
+      INR: { USD: 0.013, EUR: 0.011, GBP: 0.0096 }
     };
-    
-    // Perform conversion
-    var convertedAmount = amount * conversionRates[fromCurrency][toCurrency];
-    
-    // Display result
-    var conversionResultElement = document.getElementById('conversionResult');
-    conversionResultElement.innerHTML = '<p>' + amount + ' ' + fromCurrency + ' = ' + convertedAmount.toFixed(2) + ' ' + toCurrency + '</p>';
-});
+  
+    return exchangeRates[fromCurrency][toCurrency];
+  }

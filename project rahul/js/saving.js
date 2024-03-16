@@ -1,24 +1,30 @@
 
-document.getElementById('budgetForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+document.getElementById('budgetForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    const income = parseFloat(document.getElementById('income').value);
+    const housing = parseFloat(document.getElementById('housing').value);
+    const utilities = parseFloat(document.getElementById('utilities').value);
+    const food = parseFloat(document.getElementById('food').value);
+    const transportation = parseFloat(document.getElementById('transportation').value);
     
-    // Get input values
-    var income = parseFloat(document.getElementById('income').value);
-    var housing = parseFloat(document.getElementById('housing').value);
-    var utilities = parseFloat(document.getElementById('utilities').value);
-    var food = parseFloat(document.getElementById('food').value);
-    var transportation = parseFloat(document.getElementById('transportation').value);
-    
-    // Calculate total expenses
-    var totalExpenses = housing + utilities + food + transportation;
-    
-    // Calculate remaining budget
-    var remainingBudget = income - totalExpenses;
-    
-    // Display result
-    var budgetResultElement = document.getElementById('budgetResult');
-    budgetResultElement.innerHTML = '<p>Remaining budget: RS. ' + remainingBudget.toFixed(2) + '</p>';
-});
+    const totalExpenses = housing + utilities + food + transportation;
+    const remainingBudget = income - totalExpenses;
+  
+    let budgetStatus = '';
+    if (remainingBudget >= 0) {
+      budgetStatus = 'You have surplus budget.';
+    } else {
+      budgetStatus = 'You have a budget deficit. Consider reducing expenses or increasing income.';
+    }
+  
+    const resultElement = document.getElementById('budgetResult');
+    resultElement.innerHTML = `
+      <p>Total Expenses: RS. ${totalExpenses.toFixed(2)}</p>
+      <p>Remaining Budget: RS. ${remainingBudget.toFixed(2)}</p>
+      <p>${budgetStatus}</p>
+    `;
+  });
 
 
 document.getElementById("savingsForm").addEventListener("submit", function(event) {
@@ -44,16 +50,18 @@ document.getElementById("savingsForm").addEventListener("submit", function(event
 
 // tax js 
 
-document.getElementById("taxForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents the default form submission behavior
-    
-    // Get the input values
-    var income = parseFloat(document.getElementById("income").value);
-    var taxRate = parseFloat(document.getElementById("taxRate").value) / 100; // Convert percentage to decimal
-
-    // Calculate tax amount
-    var taxAmount = income * (taxRate / 100);
-
-    // Display the result
-    document.getElementById("taxResult").innerHTML = "Tax Amount: RS. " + taxAmount.toFixed(2);
-});
+document.getElementById('taxForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    const income = parseFloat(document.getElementById('income').value);
+    const taxRate = parseFloat(document.getElementById('taxRate').value) / 100;
+  
+    const taxAmount = income * taxRate;
+    const afterTaxIncome = income - taxAmount;
+  
+    const resultElement = document.getElementById('taxResult');
+    resultElement.innerHTML = `
+      <p>Tax Amount: RS. ${taxAmount.toFixed(2)}</p>
+      <p>Income After Tax: RS. ${afterTaxIncome.toFixed(2)}</p>
+    `;
+  });

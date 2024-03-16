@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Loan Calculator</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="./css/index.css">
-<link rel="stylesheet" href="./css/about.css">
+<link rel="stylesheet" href="./css/contact.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,24 +39,40 @@
     </div>
   </nav>
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-8 offset-md-2 ">
-        <h2>About Us</h2>
-        <p>Welcome to Financial Calculator, your go-to resource for powerful financial tools designed to empower you in making informed decisions about your finances.</p>
-        <p>At Financial Calculator, we understand that navigating the complexities of personal and business finance can be daunting. That's why we've dedicated ourselves to developing intuitive and comprehensive financial calculators to simplify your financial planning process.</p>
-        <p>Our team consists of experienced financial experts and skilled developers who are passionate about providing you with accurate, reliable, and user-friendly tools. We believe that everyone deserves access to the tools and information needed to make sound financial choices, whether you're planning for retirement, managing debt, or saving for a major purchase.</p>
-        <p>With our range of calculators, you can effortlessly analyze various financial scenarios, crunch numbers, and visualize outcomes, giving you the confidence to take control of your financial future. From mortgage and loan calculators to investment and retirement planners, our suite of tools covers a wide spectrum of financial needs.</p>
-        <p>We are committed to continuously improving and expanding our offerings to meet the evolving needs of our users. Your feedback is invaluable to us, and we strive to incorporate it into every aspect of our platform.</p>
-        <p>Thank you for choosing Financial Calculator as your trusted financial companion. We're here to help you navigate your financial journey with confidence and clarity.</p>
-      </div>
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Contact Us</h2>
+            <p class="text-center">For inquiries, please contact:</p>
+            <ul class="list-unstyled">
+                <li><strong>Customer Support:</strong> +1 (800) 123-4567</li>
+                <li><strong>Sales Department:</strong> +1 (800) 987-6543</li>
+            </ul>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
     </div>
-    </div>
-        
+</div>
+       
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="./js/script.js"></script>
+<script src="./js/currency.js"></script>
 </body>
 </html>
