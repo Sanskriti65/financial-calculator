@@ -1,3 +1,26 @@
+
+document.getElementById('budgetForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get input values
+    var income = parseFloat(document.getElementById('income').value);
+    var housing = parseFloat(document.getElementById('housing').value);
+    var utilities = parseFloat(document.getElementById('utilities').value);
+    var food = parseFloat(document.getElementById('food').value);
+    var transportation = parseFloat(document.getElementById('transportation').value);
+    
+    // Calculate total expenses
+    var totalExpenses = housing + utilities + food + transportation;
+    
+    // Calculate remaining budget
+    var remainingBudget = income - totalExpenses;
+    
+    // Display result
+    var budgetResultElement = document.getElementById('budgetResult');
+    budgetResultElement.innerHTML = '<p>Remaining budget: RS. ' + remainingBudget.toFixed(2) + '</p>';
+});
+
+
 document.getElementById("savingsForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevents the default form submission behavior
     
@@ -18,6 +41,8 @@ document.getElementById("savingsForm").addEventListener("submit", function(event
     document.getElementById("resultSaving").innerHTML = "Total Savings: RS. " + totalSavings.toFixed(2);
 });
 
+
+// tax js 
 
 document.getElementById("taxForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevents the default form submission behavior

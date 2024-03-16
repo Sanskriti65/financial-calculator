@@ -1,6 +1,9 @@
 
 body{
-    background-color: #0e2b4a;
+  background-image: url(./desktop-wallpaper-plain-background-cool-plain\ \(1\).jpg);
+  background-position: center;
+  background-size: cover;
+    /* background-color: #0e2b4a; */
     /* background-color: rgb(176, 175, 173); */
 }
 .card{
