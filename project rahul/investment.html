@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Calculator</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html">Financial Calculator</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Calculators
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./loan.html">Loan Calculator</a>
+            <a class="dropdown-item" href="./home.html">Savings Calculator</a>
+            <a class="dropdown-item" href="./investment.html">Investment Calculator</a>
+            <a class="dropdown-item" href="./currency.html">Currency Converter</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5 col-12">
+  <div class="container mt-5 col-4">
+    <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Investment Calculator</h2>
+          <form id="investmentForm">
+            <div class="form-group">
+              <label for="initialAmount">Initial Investment (RS. )</label>
+              <input type="number" class="form-control" id="startingAmount" placeholder="Enter initial investment">
+            </div>
+            <div class="form-group">
+              <label for="monthlyContribution">Monthly Contribution (RS. )</label>
+              <input type="number" class="form-control" id="monthlyContribution" placeholder="Enter monthly contribution">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Annual Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRateInvestment" placeholder="Enter annual interest rate">
+            </div>
+            <div class="form-group">
+              <label for="years">Number of Years</label>
+              <input type="number" class="form-control" id="yearsInvestment" placeholder="Enter number of years">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="resultInvestment" class="mt-3"></div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Retirement Calculator</h2>
+          <form id="retirementForm">
+            <div class="form-group">
+              <label for="currentAge">Current Age</label>
+              <input type="number" class="form-control" id="currentAge" placeholder="Enter current age">
+            </div>
+            <div class="form-group">
+              <label for="retirementAge">Retirement Age</label>
+              <input type="number" class="form-control" id="retirementAge" placeholder="Enter retirement age">
+            </div>
+            <div class="form-group">
+              <label for="annualIncome">Annual Income (RS. )</label>
+              <input type="number" class="form-control" id="annualIncome" placeholder="Enter annual income">
+            </div>
+            <div class="form-group">
+              <label for="monthlySavings">Monthly Savings (RS. )</label>
+              <input type="number" class="form-control" id="monthlySavings" placeholder="Enter monthly savings">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Annual Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRate" placeholder="Enter annual interest rate">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="retirementResult" class="mt-3"></div>
+        </div>
+      </div>
+          
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>

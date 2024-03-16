@@ -1,0 +1,24 @@
+/* Custom CSS */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .container {
+    text-align: justify;
+  }
+  h2{
+    text-align: center;
+    color: white;
+    font-size: 52px;
+    padding: 20px;
+    font-weight: bold;
+  }
+  p{
+    color: white;
+    text-align: center;
+  }
+  

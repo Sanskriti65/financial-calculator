@@ -1,0 +1,64 @@
+
+body{
+    background-color: #0e2b4a;
+    /* background-color: rgb(176, 175, 173); */
+}
+.card{
+   
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(116, 101, 101, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* Center align card titles */
+.card-title {
+    text-align: center;
+  }
+  
+  /* Add some padding between cards */
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  /* Style form labels */
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  /* Style buttons */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Add some margin to form buttons */
+  .form-group button {
+    margin-top: 10px;
+  }
+  
+  /* Style result divs */
+  #resultLoan,
+  #resultSaving,
+  #resultInvestment,
+  #budgetResult,
+  #retirementResult,
+  #debtResult,
+  #conversionResult,
+  #taxResult,
+  #mortgageResult,
+  #creditCardResult,
+  #studentLoanResult {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  

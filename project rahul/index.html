@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Calculator</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html">Financial Calculator</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./home1.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Calculators
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./loan.html">Loan Calculator</a>
+            <a class="dropdown-item" href="./home.html">Savings Calculator</a>
+            <a class="dropdown-item" href="./investment.html">Investment Calculator</a>
+            <a class="dropdown-item" href="./currency.html">Currency Converter</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5 col-12">
+  <div class="container mt-5 col-4">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Loan Calculator</h2>
+        <form id="loanForm">
+          <div class="form-group">
+            <label for="loanAmount">Loan Amount (RS. )</label>
+            <input type="number" class="form-control" id="loanAmount" placeholder="Enter loan amount">
+          </div>
+          <div class="form-group">
+            <label for="interestRate">Interest Rate (%)</label>
+            <input type="number" class="form-control" id="interestRate" placeholder="Enter interest rate">
+          </div>
+          <div class="form-group">
+            <label for="loanTerm">Loan Term (Years)</label>
+            <input type="number" class="form-control" id="loanTerm" placeholder="Enter loan term">
+          </div>
+          <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <div id="resultLoan" class="mt-3"></div>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Savings Calculator</h2>
+          <form id="savingsForm">
+            <div class="form-group">
+              <label for="initialAmount">Initial Amount (RS. )</label>
+              <input type="number" class="form-control" id="initialAmount" placeholder="Enter initial amount">
+            </div>
+            <div class="form-group">
+              <label for="monthlyDeposit">Monthly Deposit (RS. )</label>
+              <input type="number" class="form-control" id="monthlyDeposit" placeholder="Enter monthly deposit">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Annual Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRateSaving" placeholder="Enter annual interest rate">
+            </div>
+            <div class="form-group">
+              <label for="years">Number of Years</label>
+              <input type="number" class="form-control" id="years" placeholder="Enter number of years">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="resultSaving" class="mt-3"></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Investment Calculator</h2>
+          <form id="investmentForm">
+            <div class="form-group">
+              <label for="initialAmount">Initial Investment (RS. )</label>
+              <input type="number" class="form-control" id="startingAmount" placeholder="Enter initial investment">
+            </div>
+            <div class="form-group">
+              <label for="monthlyContribution">Monthly Contribution (RS. )</label>
+              <input type="number" class="form-control" id="monthlyContribution" placeholder="Enter monthly contribution">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Annual Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRateInvestment" placeholder="Enter annual interest rate">
+            </div>
+            <div class="form-group">
+              <label for="years">Number of Years</label>
+              <input type="number" class="form-control" id="yearsInvestment" placeholder="Enter number of years">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="resultInvestment" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Budgeting Calculator</h2>
+          <form id="budgetForm">
+            <div class="form-group">
+              <label for="income">Monthly Income (RS. )</label>
+              <input type="number" class="form-control" id="income" placeholder="Enter monthly income">
+            </div>
+            <div class="form-group">
+              <label for="housing">Housing Expense (RS. )</label>
+              <input type="number" class="form-control" id="housing" placeholder="Enter housing expense">
+            </div>
+            <div class="form-group">
+              <label for="utilities">Utilities Expense (RS. )</label>
+              <input type="number" class="form-control" id="utilities" placeholder="Enter utilities expense">
+            </div>
+            <div class="form-group">
+              <label for="food">Food Expense (RS. )</label>
+              <input type="number" class="form-control" id="food" placeholder="Enter food expense">
+            </div>
+            <div class="form-group">
+              <label for="transportation">Transportation Expense (RS. )</label>
+              <input type="number" class="form-control" id="transportation" placeholder="Enter transportation expense">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="budgetResult" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Retirement Calculator</h2>
+          <form id="retirementForm">
+            <div class="form-group">
+              <label for="currentAge">Current Age</label>
+              <input type="number" class="form-control" id="currentAge" placeholder="Enter current age">
+            </div>
+            <div class="form-group">
+              <label for="retirementAge">Retirement Age</label>
+              <input type="number" class="form-control" id="retirementAge" placeholder="Enter retirement age">
+            </div>
+            <div class="form-group">
+              <label for="annualIncome">Annual Income (RS. )</label>
+              <input type="number" class="form-control" id="annualIncome" placeholder="Enter annual income">
+            </div>
+            <div class="form-group">
+              <label for="monthlySavings">Monthly Savings (RS. )</label>
+              <input type="number" class="form-control" id="monthlySavings" placeholder="Enter monthly savings">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Annual Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRate" placeholder="Enter annual interest rate">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="retirementResult" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Debt Calculator</h2>
+          <form id="debtForm">
+            <div class="form-group">
+              <label for="principalAmount">Principal Amount (RS. )</label>
+              <input type="number" class="form-control" id="principalAmount" placeholder="Enter principal amount">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Annual Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRate" placeholder="Enter annual interest rate">
+            </div>
+            <div class="form-group">
+              <label for="loanTerm">Loan Term (Years)</label>
+              <input type="number" class="form-control" id="loanTerm" placeholder="Enter loan term">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="debtResult" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Currency Converter</h2>
+          <form id="currencyForm">
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+            </div>
+            <div class="form-group">
+              <label for="fromCurrency">From Currency</label>
+              <select class="form-control" id="fromCurrency">
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <!-- Add more currency options as needed -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="toCurrency">To Currency</label>
+              <select class="form-control" id="toCurrency">
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <!-- Add more currency options as needed -->
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Convert</button>
+          </form>
+          <div id="conversionResult" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Tax Calculator</h2>
+          <form id="taxForm">
+            <div class="form-group">
+              <label for="income">Income (RS. )</label>
+              <input type="number" class="form-control" id="income" placeholder="Enter income">
+            </div>
+            <div class="form-group">
+              <label for="taxRate">Tax Rate (%)</label>
+              <input type="number" class="form-control" id="taxRate" placeholder="Enter tax rate">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="taxResult" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Mortgage Calculator</h2>
+          <form id="mortgageForm">
+            <div class="form-group">
+              <label for="loanAmount">Loan Amount (RS. )</label>
+              <input type="number" class="form-control" id="loanAmount" placeholder="Enter loan amount">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRate" placeholder="Enter interest rate">
+            </div>
+            <div class="form-group">
+              <label for="loanTerm">Loan Term (Years)</label>
+              <input type="number" class="form-control" id="loanTerm" placeholder="Enter loan term">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="mortgageResult" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Credit Card Calculator</h2>
+          <form id="creditCardForm">
+            <div class="form-group">
+              <label for="balance">Current Balance (RS. )</label>
+              <input type="number" class="form-control" id="balance" placeholder="Enter current balance">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Annual Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRate" placeholder="Enter annual interest rate">
+            </div>
+            <div class="form-group">
+              <label for="monthlyPayment">Monthly Payment (RS. )</label>
+              <input type="number" class="form-control" id="monthlyPayment" placeholder="Enter monthly payment">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="creditCardResult" class="mt-3"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Student Loan Calculator</h2>
+          <form id="studentLoanForm">
+            <div class="form-group">
+              <label for="loanAmount">Loan Amount (RS. )</label>
+              <input type="number" class="form-control" id="loanAmount" placeholder="Enter loan amount">
+            </div>
+            <div class="form-group">
+              <label for="interestRate">Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRate" placeholder="Enter interest rate">
+            </div>
+            <div class="form-group">
+              <label for="loanTerm">Loan Term (Years)</label>
+              <input type="number" class="form-control" id="loanTerm" placeholder="Enter loan term">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="studentLoanResult" class="mt-3"></div>
+        </div>
+      </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
